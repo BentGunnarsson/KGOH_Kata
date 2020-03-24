@@ -8,3 +8,6 @@ def test_add_one_number():
 
 def test_add_two_numbers():
     assert Add("3,7") == 10
+
+def test_add_unknown_amt_of_numbers():
+    assert Add("3,7,14,11,2") == 37

@@ -3,5 +3,8 @@ def Add(entry):
         return 0
     if "," not in entry:
         return int(entry)
-    entry1, entry2 = entry.split(",")
-    return int(entry1) + int(entry2)
+    entry = entry.split(",")
+    ret_val = 0
+    for num in entry:
+        ret_val += int(num)
+    return ret_val
