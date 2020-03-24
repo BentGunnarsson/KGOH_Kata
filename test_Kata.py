@@ -5,3 +5,6 @@ def test_add_nothing():
 
 def test_add_one_number():
     assert Add("3") == 3
+
+def test_add_two_numbers():
+    assert Add("3,7") == 10
