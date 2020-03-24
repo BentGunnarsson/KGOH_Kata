@@ -1,7 +1,11 @@
 def Add(entry):
     if entry == "":
         return 0
-    
+    if entry[:2] == "//":
+        delim = entry[2]
+        entry = entry[4:]
+        entry = entry.replace(delim,",")
+
     entry = entry.replace("\n",",")
     entry = entry.split(",")
     ret_val = 0
@@ -23,3 +27,6 @@ def Add(entry):
         raise Exception("Negatives not allowed: "+neg_nums)
 
     return ret_val
+
+if __name__ == "__main__":
+    Add("//%\n1%2%3")
