@@ -14,20 +14,17 @@ def Add(entry):
 
     ret_val = 0
     negatives = False
+    neg_nums = ""
 
     for num in entry:
         if int(num) < 0:
             negatives = True
-            break
+            neg_nums += ","+str(num)
+            
         if int(num) < 1001:
             ret_val += int(num)
 
     if negatives:
-        # Finding all the negative numbers
-        neg_nums = ""
-        for num in entry:
-            if int(num) < 0:
-                neg_nums += ","+str(num)
         neg_nums = neg_nums[1:]
         raise Exception("Negatives not allowed: "+neg_nums)
 

@@ -20,8 +20,9 @@ def test_ignore_above_1000():
     assert Add("1001,4") == 4
 
 def test_negatives_exception():
-    with pytest.raises(Exception):
-        assert Add("-2,4,-5,-7") == "No negatives allowed: -2,-5,-7"
+    with pytest.raises(Exception) as error:
+        Add("-2,4,-5,-7")
+    assert "Negatives not allowed: -2,-5,-7" in str(error.value)
     
 def test_other_delimiters():
     assert Add("//%\n1%2%3") == 6
